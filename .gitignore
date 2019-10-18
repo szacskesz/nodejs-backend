@@ -1,0 +1,14 @@
+build/
+.build/
+
+node_modules/
+.node_modules/
+
+cache/
+.cache/
+
+logs/
+.logs/
+log/
+.log/
+*.log
