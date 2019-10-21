@@ -6,6 +6,7 @@ import ItemController from '../controllers/ItemController';
 import urljoin from 'url-join';
 import DatabaseConnection from '../database-connection/DatabaseConnection';
 import errorHandlerMiddleware from './../middlewares/ErrorHandlerMiddleware';
+import logger from './../logger/Logger';
 
 interface ServerOptions {
     port: number;
@@ -36,7 +37,7 @@ export default class Server {
     public start = () => {
         DatabaseConnection.connectToDatabase().then(()=> {
             this.app.listen(this.options.port, () => {
-                console.info(`Server is started on port ${this.options.port}.`);
+                logger.info(`Server is started on port ${this.options.port}.`);
             });
         })
     }

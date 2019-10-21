@@ -20,6 +20,7 @@
     "config": "^3.2.3",
     "express": "^4.17.1",
     "mongodb": "^3.3.2",
+    "path": "^0.12.7",
     "properties": "^1.2.1",
     "reflect-metadata": "^0.1.13",
     "saslprep": "^1.0.3",

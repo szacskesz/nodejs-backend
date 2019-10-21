@@ -1,6 +1,7 @@
 import config from 'config';
 import { MongoClient, MongoClientOptions, Db } from "mongodb";
 import NoDatabaseConnectionException from '../../exceptions/NoActiveDatabaseConnectionException';
+import logger from './../logger/Logger';
 
 const MONGO_URL: string = config.get('db.url');
 const MONGO_OPTIONS: MongoClientOptions = {
@@ -25,12 +26,12 @@ export default class DatabaseConnection {
             .then((client) => {
                 DatabaseConnection.dbConnection = client.db();
                 DatabaseConnection.connectingPromise = undefined;
-    
-                console.info('Successfully connected to the database!');
+
+                logger.info('Successfully connected to the database!');
             }).catch((error) => {
                 DatabaseConnection.connectingPromise = undefined;
 
-                console.error('Could not connect to the database!');
+                logger.error('Could not connect to the database!');
                 throw error;
             })
         }
