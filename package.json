@@ -18,7 +18,7 @@
     "class-transformer": "^0.2.3",
     "class-validator": "^0.10.2",
     "config": "^3.2.3",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "mongodb": "^3.3.2",
     "path": "^0.12.7",
     "properties": "^1.2.1",
